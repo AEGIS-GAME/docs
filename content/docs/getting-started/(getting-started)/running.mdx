@@ -1,0 +1,141 @@
+---
+title: Running Aegis
+description: A guide on running simulations.
+---
+
+Aegis can be run in two ways: via the command-line interface (CLI) or the graphical client.
+Choose the method that best fits your workflow. CLI is ideal for quick testing and automation,
+while the client provides a more visual experience.
+
+## Command Line Usage
+
+To run Aegis from the terminal, use the aegis command:
+
+```
+aegis [--amount AMOUNT] --world WORLD \
+  --rounds ROUNDS --agent AGENT \
+  [--client] [--debug] [--log]
+```
+
+### Example
+
+Here's an example of running Aegis with a "test" agent, `ExampleWorld.world` and 50 rounds:
+
+```
+aegis --world worlds/ExampleWorld.world \
+  --rounds 50 --agent agents/test/main.py
+```
+
+### Example with Logging
+
+To save console output to a log file:
+
+```
+aegis --world worlds/ExampleWorld.world \
+  --rounds 50 --agent agents/test/main.py \
+  --log
+```
+
+### Full Command Options
+
+```
+options:
+  -h, --help       show this help message and exit
+  --amount AMOUNT  Number of agents to run (default = 1)
+  --world WORLD    World file to use.
+  --rounds ROUNDS  Number of simulation rounds
+  --agent AGENT    Path to the agent file
+  --client         Set to wait for the client to connect
+  --debug          Enable agent debug logging output
+  --log            Enable AEGIS console output logging to file
+
+```
+
+### Logging Types
+
+Aegis supports two distinct types of logging:
+
+- **`--debug`**: Enables debug output from individual agents, showing their internal logic and decision-making process
+- **`--log`**: Captures all AEGIS console output (simulation events, agent actions, errors, etc.) to a timestamped log file in the `logs/` directory
+
+## Client Usage
+
+You can open the client either through the terminal or your system's file explorer.
+
+<Tabs items={['Mac', 'Windows', 'Linux']}>
+<Tab value="Mac">
+
+To open the client from the terminal:
+
+```bash
+cd client
+open Aegis.app
+```
+
+Or simply double-click `Aegis.app` from Finder.
+
+If you see the following error, follow the mac error guide.
+
+![Mac Error](/mac_error.png)
+
+</Tab>
+
+<Tab value="Windows">
+
+To launch the client from the terminal:
+
+```bash
+cd client
+.\aegis-client.exe
+```
+
+Or double-click `aegis-client.exe` in File Explorer.
+
+</Tab>
+
+<Tab value="Linux">
+
+To launch the client from the terminal:
+
+```bash
+cd client
+./aegis-client.AppImage
+```
+
+Alternatively, you can launch the AppImage from your preferred file manager by double-clicking it.
+
+</Tab>
+</Tabs>
+
+Once the client opens, follow the steps below to run a simulation.
+
+<Steps>
+
+### Set the Aegis Path
+
+Since the client cannot automatically locate your project files, click the **Setup Aegis Path** button and
+select the root `aegis` directory. This root directory contains your worlds, agents, and client folders.
+
+If the setup is successful, the sidebar tabs will appear and you'll be able to select worlds and agents in
+the **Aegis** tab.
+
+<Callout title="Tip" type="info">
+  If you accidentally select the wrong path, you can reconfigure it anytime from the
+  **Settings** tab.
+</Callout>
+
+### Configure Simulation Options
+
+Navigate to the **Aegis** tab and fill in the required options before starting up a simulation.
+
+### Start the Simulation
+
+Once all required fields are set, the **Start Up Game** button will become active.
+Click it to launch the simulation. You'll know it's running when the console logs confirm startup
+or the button changes to **Kill Game**.
+
+### Confirm
+
+If everything is configured correctly, the simulation will start and display in the main window.
+
+</Steps>

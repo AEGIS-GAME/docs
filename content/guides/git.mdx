@@ -1,0 +1,246 @@
+---
+title: Git Setup
+description: Git basics and repo setup
+author: Dante
+---
+
+## Overview
+
+This guide provides a step-by-step process for setting up a Git repository for your group assignment.
+Only one person in the group needs to create the repository and the `.gitignore` file.
+
+<Callout title="Version Control Recommended">
+  Setting up a Git repository is optional, but highly recommended for managing code
+  collaboratively.
+</Callout>
+
+## Installing Git
+
+Ensure Git is installed on your system using:
+
+```bash
+git --version
+```
+
+If Git is installed, you’ll see output similar to:
+
+```bash
+git version x.xx.x
+```
+
+If you receive an error or no output, follow the steps below:
+
+<Tabs items={['Mac', 'Linux', 'Windows']}>
+
+<Tab value="Mac">
+
+Install git using Homebrew:
+
+```bash
+brew install git
+```
+
+If you don't have Homebrew, first install it from [brew.sh](https://brew.sh/)
+
+</Tab>
+
+<Tab value="Linux">
+
+Install git using the package manager included with your Linux distribution.
+
+</Tab>
+
+<Tab value="Windows">
+
+Download git from [here](https://git-scm.com/downloads/win).
+
+</Tab>
+
+</Tabs>
+
+## Initializing Git in an Existing Project
+
+<Steps>
+
+### Navigate to the Aegis Directory
+
+Open a terminal and change into the Aegis directory
+
+```bash
+cd path/to/aegis/directory
+```
+
+### Initialize the Git Repo
+
+Initialize Git in the Aegis directory
+
+```bash
+git init
+```
+
+### Create a New Repository
+
+<Tabs items={['Github', 'Gitlab']}>
+
+<Tab value="Github">
+
+1. Go to [GitHub](https://github.com) and log in.
+2. Click the "New" button to create a new repository.
+3. Enter a repository name, choose private for the visibility, and click "Create Repository".
+
+</Tab>
+
+<Tab value="Gitlab">
+
+1. Go to [Gitlab](https://csgit.ucalgary.ca/) and log in with your IT account.
+2. Click the "+" button and then click "New project/repository".
+3. Create a blank project.
+4. Enter a project name, choose private for the visibility, and click "Create Project".
+
+</Tab>
+
+</Tabs>
+
+### Add a Remote Repository
+
+Link your aegis repository to the newly created remote repository.
+
+```bash tab="Github"
+git remote add origin https://github.com/yourusername/your-repo.git
+```
+
+```bash tab="Gitlab"
+git remote add origin https://csgit.ucalgary.ca/yourusename/your-repo.git
+```
+
+</Steps>
+
+## Creating a .gitignore file
+
+<Callout type="warning" title="File Placement">
+
+The `.gitignore` file must be in the root of your project to work correctly.
+
+</Callout>
+
+A `.gitignore` file tells git which files to ignore.
+
+<Steps>
+
+### Create the .gitignore file
+
+Creating a file in the command line:
+
+```bash tab="Mac/Linux"
+touch .gitignore
+```
+
+```bash tab="Windows"
+echo "" > .gitignore
+```
+
+or you can use the file explorer.
+
+### Add the Following Content
+
+```txt
+client
+.venv
+venv
+*__pycache__*
+
+# Editor directories and files
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo *.ntvs*
+*.njsproj
+*.sln
+*.sw?
+```
+
+### Typical Repository Structure
+
+<Tree>
+  <TreeItem name="aegis" type="folder">
+    <TreeItem name=".gitignore" />
+    <TreeItem name="client" type="folder" />
+    <TreeItem name="src" type="folder" />
+    <TreeItem name="config" type="folder" />
+    <TreeItem name="worlds" type="folder" />
+  </TreeItem>
+</Tree>
+
+</Steps>
+
+### Initial Commit and Push
+
+<Steps>
+
+### Stage and Commit Files
+
+```bash
+git add .
+git commit -m "Initial Commit"
+```
+
+### Push to the Repository
+
+```bash
+git branch -M main
+git push -u origin main
+```
+
+</Steps>
+
+## Cloning the Repository
+
+After being added to the repository, the group members should clone the repository to their local machines.
+
+```bash tab="Github"
+git clone https://github.com/ownerusername/your-repo.git
+```
+
+```bash tab="Gitlab"
+git clone https://csgit.ucalgary.ca/ownerusername/your-repo.git
+```
+
+## Essential Git Workflow Commands
+
+<Callout title="Collaboration best practices">
+
+Minimize merge conflicts and maintain smooth team collaboration by following these key Git workflow principles:
+
+- Always pull changes before starting work to ensure you have the latest project state.
+- Communicate with your team about who is working on specific files or features.
+- Pull changes from the remote repository immediately before pushing your commits.
+- Break your work into small commits that allow you to easily revert changes if something breaks.
+  This provides a clear rollback path and reduces the risk of losing significant work.
+
+</Callout>
+
+### Pull Latest Changes
+
+```bash
+git pull
+```
+
+### Pushing Your Changes
+
+```bash
+git add .
+git commit -m "Descriptive commit message"
+git push
+```
+
+### Checking Repository Status
+
+```bash
+git status
+```
+
+## Additional Resources
+
+- [Git Official Documentation](https://git-scm.com/doc)
+- [GitHub Desktop](https://desktop.github.com/) (alternative to command line)

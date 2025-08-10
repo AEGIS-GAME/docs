@@ -1,0 +1,45 @@
+---
+title: CellInfo
+description: Represents information about a cell in the world.
+---
+
+
+
+
+## Attributes
+
+### type
+
+<PyAttribute type="CellType" value="" docString="The type of the cell." />
+
+### location
+
+<PyAttribute type="Location" value="" docString="The coordinates of the cell." />
+
+### move_cost
+
+<PyAttribute type="int" value="" docString="The movement cost to traverse this cell." />
+
+### agents
+
+<PyAttribute type="list[int]" value="" docString="List of agent IDs currently in this cell." />
+
+### layers
+
+<PyAttribute type="list[WorldObject]" value="" docString="Stack of world objects present in the cell, ordered by layer." />
+
+### top_layer
+
+<PyAttribute type="WorldObject | None" value="" docString="Get the top-most layer object of the cell." />
+
+
+## Methods
+
+### is_killer_cell
+
+<PyFunctionSignature signature="def is_killer_cell() -> bool" />
+
+<PyFunction docString="Check if the cell is a killer cell.
+
+Returns:
+    bool: True if the cell type is KILLER_CELL, else False." />

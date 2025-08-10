@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+:root {
+  --color-aegis-info: #3dd5ff;
+  --color-aegis-warning: #fbbf24;
+  --color-aegis-error: #ef4444;
+  --color-aegis-success: #10b981;
+  --color-aegis-muted: #64748b;
+}
+
+@utility step {
+  counter-increment: step;
+
+  &:before {
+    @apply absolute inline-flex h-9 w-9 rounded-full items-center justify-center border-2 border-black bg-fd-muted text-center -indent-px font-mono text-base font-medium;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+}
+
+.steps:first-child > h3:first-child {
+  @apply mt-0;
+}
+
+.steps > h3 {
+  @apply mt-8 mb-4 text-base font-semibold;
+}

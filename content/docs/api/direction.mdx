@@ -1,0 +1,88 @@
+---
+title: Direction
+description: Represents the eight principal compass directions plus the center (no movement).
+---
+
+
+## Enum Constants
+
+### NORTH
+
+<PyAttribute type="" value="" docString="Direction that points north (up)." />
+
+### NORTHEAST
+
+<PyAttribute type="" value="" docString="Direction that points northeast (up and right)." />
+
+### EAST
+
+<PyAttribute type="" value="" docString="Direction that points east (right)." />
+
+### SOUTHEAST
+
+<PyAttribute type="" value="" docString="Direction that points southeast (down and right)." />
+
+### SOUTH
+
+<PyAttribute type="" value="" docString="Direction that points south (down)." />
+
+### SOUTHWEST
+
+<PyAttribute type="" value="" docString="Direction that points southwest (down and left)." />
+
+### WEST
+
+<PyAttribute type="" value="" docString="Direction that points west (left)." />
+
+### NORTHWEST
+
+<PyAttribute type="" value="" docString="Direction that points northwest (up and left)." />
+
+### CENTER
+
+<PyAttribute type="" value="" docString="Direction that points center (not moving)." />
+
+
+## Attributes
+
+### dx
+
+<PyAttribute type="int" value="" docString="Get the change in the x direction." />
+
+### dy
+
+<PyAttribute type="int" value="" docString="Get the change in the y direction." />
+
+
+## Methods
+
+### rotate_left
+
+<PyFunctionSignature signature="def rotate_left() -> Direction" />
+
+<PyFunction docString="Rotate the direction 45 degrees counter-clockwise (left).
+
+The center direction returns itself unchanged.
+
+Returns:
+    Direction: The direction rotated left." />
+### rotate_right
+
+<PyFunctionSignature signature="def rotate_right() -> Direction" />
+
+<PyFunction docString="Rotate the direction 45 degrees clockwise (right).
+
+The center direction returns itself unchanged.
+
+Returns:
+    Direction: The direction rotated right." />
+### get_opposite
+
+<PyFunctionSignature signature="def get_opposite() -> Direction" />
+
+<PyFunction docString="Get the opposite direction (180 degrees rotation).
+
+The center direction returns itself unchanged.
+
+Returns:
+    Direction: The opposite direction." />

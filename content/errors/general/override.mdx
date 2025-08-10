@@ -1,0 +1,42 @@
+---
+title: Cannot Import 'Override' From Typing
+description: Fix import errors with 'override' from typing module.
+author: Dante
+---
+
+<Steps>
+
+### Ensure You Are Using Python 3.12.10
+
+Confirm that your virtual environment is using `Python 3.12.10` by running the following command with
+the environment activated:
+
+```bash
+python --version
+```
+
+If the version shown is not `3.12.10` check your system python installations for the correct version.
+If not installed, follow the [Python Guide](https://cpsc-383.github.io/aegis/guides/python/).
+
+### Recreate the virtual environment
+
+To ensure that your environment is properly set up, recreate your virtual environment.
+Make sure you run the command in the `aegis` directory.
+
+```bash tab="Mac/Linux"
+python3 -m venv .venv
+
+or
+
+python3.12 -m venv .venv
+```
+
+```bash tab="Windows"
+python -m venv .venv
+
+or
+
+py -3.12 -m venv .venv
+```
+
+</Steps>

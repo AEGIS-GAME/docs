@@ -1,0 +1,31 @@
+---
+title: Venv Activation Blocked
+description: Fix script execution blocked error when activating venv.
+author: Dante
+---
+
+<Steps>
+
+### Open PowerShell as administrator
+
+Press `Win + X` and select Windows PowerShell (Admin) or search for PowerShell,
+right-click, and choose Run as Administrator.
+
+### Set the Execution Policy
+
+Run the following command in the PowerShell window:
+
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
+
+### Confirm the Change
+
+Hit Enter. When prompted, type `A` to allow all scripts and press Enter again to confirm the change.
+
+### Reopen Your Code Editor
+
+Close and reopen your code editor (VS Code, for example). After doing this, you should now be able
+to activate the virtual environment without any issues.
+
+</Steps>
