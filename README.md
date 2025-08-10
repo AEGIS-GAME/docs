@@ -2,9 +2,6 @@
 
 This repo contains the [Aegis](https://github.com/CPSC-383/aegis) project documentation website.
 
-> [!WARNING]
-> Do not touch the `docs` branch. The workflow will automatically update the files for the website.
-
 ## Local Development
 
 1. Install dependencies:
