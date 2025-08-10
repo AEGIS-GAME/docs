@@ -2,9 +2,7 @@ name: Docs Build Check
 
 on:
   pull_request:
-    branches: [main, dev]
-    paths:
-      - 'docs/**' # only run if something in docs/ changes
+    branches: [main]
 
 jobs:
   build-check:
@@ -14,17 +12,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node 
-        uses: actions/setup-node@v3
+      - name: Setup Bun 
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 18
-          cache: 'npm'
-          cache-dependency-path: docs/package-lock.json
+          bun-version: latest
+          cache: 'bun'
+          cache-dependency-path: bun.lock 
 
       - name: Install dependencies
-        working-directory: docs
-        run: npm ci
+        run: bun i
 
       - name: Test build website
-        working-directory: docs
-        run: npm run build
+        run: bun run build
