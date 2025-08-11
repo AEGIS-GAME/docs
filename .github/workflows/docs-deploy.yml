@@ -10,9 +10,39 @@ on:
     - cron: '0 10 * * *'
 
 jobs:
+  build:
+    name: Generate api 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install uv 
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "latest"
+
+      - name: Install dependencies
+        run: |
+          uv add griffe
+          uv pip install aegis-game --no-deps
+
+      - name: Generate api 
+        run: uv run scripts/gen_api.py
+
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: auto-generate api"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+        
+
   deploy:
     name: Deploy Docs 
     runs-on: ubuntu-latest
+    needs: build
     permissions:
       contents: write
     steps:
