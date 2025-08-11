@@ -68,7 +68,7 @@ export default function HomePage() {
     <main className="relative flex h-full flex-col items-center justify-center px-4 py-12 text-white overflow-hidden">
       <NebulaBackground gradient="bg-gradient-to-br from-indigo-950 via-slate-900 to-purple-950" />
 
-      <div className="hidden sm:absolute top-4 left-4 right-4 z-20 sm:flex justify-between items-center text-xs font-mono">
+      <div className="hidden sm:absolute top-11 left-4 right-4 z-20 sm:flex justify-between items-center text-xs font-mono">
         <div className="flex items-center gap-2 bg-slate-900/80 backdrop-blur px-3 py-1 rounded border border-cyan-500/30">
           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
           <span className="text-green-400">AEGIS OPERATIONAL</span>
@@ -142,10 +142,10 @@ export default function HomePage() {
                     status === "OPERATIONAL"
                       ? "bg-green-500/20 text-green-400"
                       : status === "UPDATED"
-                        ? "bg-blue-500/20 text-blue-400"
-                        : status === "CLASSIFIED"
-                          ? "bg-red-500/20 text-red-400"
-                          : "bg-yellow-500/20 text-yellow-400"
+                      ? "bg-blue-500/20 text-blue-400"
+                      : status === "CLASSIFIED"
+                      ? "bg-red-500/20 text-red-400"
+                      : "bg-yellow-500/20 text-yellow-400"
                   }`}
                 >
                   {status}
