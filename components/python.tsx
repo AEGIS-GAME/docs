@@ -137,7 +137,6 @@ export function PyFunctionSignature({ signature }: { signature: string }) {
 }
 
 export function PyAttribute(props: { type: string; value: string; docString: string }) {
-  console.log(props.docString)
   return (
     <section className="text-fd-muted-foreground leading-relaxed prose prose-slate dark:prose-invert max-w-none my-6">
       {(props.value || props.type) && (
