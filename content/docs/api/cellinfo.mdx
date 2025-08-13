@@ -19,27 +19,16 @@ description: Represents information about a cell in the world.
 
 ### agents
 
-<PyAttribute
-  type="list[int]"
-  value=""
-  docString="List of agent IDs currently in this cell."
-/>
+<PyAttribute type="list[int]" value="" docString="List of agent IDs currently in this cell." />
 
 ### layers
 
-<PyAttribute
-  type="list[WorldObject]"
-  value=""
-  docString="Stack of world objects present in the cell."
-/>
+<PyAttribute type="list[WorldObject]" value="" docString="Stack of world objects present in the cell." />
 
 ### top_layer
 
-<PyAttribute
-  type="WorldObject | None"
-  value=""
-  docString="Get the top-most layer of the cell."
-/>
+<PyAttribute type="WorldObject | None" value="" docString="Get the top-most layer of the cell." />
+
 
 ## Methods
 
@@ -50,4 +39,5 @@ description: Represents information about a cell in the world.
 <PyFunction docString="Check if the cell is a killer cell.
 
 Returns:
-bool: True if the cell type is KILLER_CELL, else False." />
+    bool: True if the cell type is KILLER_CELL, else False." />
+

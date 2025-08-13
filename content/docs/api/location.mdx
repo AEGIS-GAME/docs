@@ -17,6 +17,7 @@ description: Represents a coordinate location with x and y integer values.
 
 <PyAttribute type="int" value="" docString="The y-coordinate." />
 
+
 ## Methods
 
 ### add
@@ -26,11 +27,10 @@ description: Represents a coordinate location with x and y integer values.
 <PyFunction docString="Return a new location by moving this Location in the specified direction.
 
 Args:
-direction: The direction to move.
+    direction: The direction to move.
 
 Returns:
-A new location in the given direction." />
-
+    A new location in the given direction." />
 ### direction_to
 
 <PyFunctionSignature signature="def direction_to(location: Location) -> Direction" />
@@ -38,11 +38,10 @@ A new location in the given direction." />
 <PyFunction docString="Determine the cardinal direction from this location to another location.
 
 Args:
-location: The target location.
+    location: The target location.
 
 Returns:
-The cardinal direction pointing towards the target location." />
-
+    The cardinal direction pointing towards the target location." />
 ### distance_to
 
 <PyFunctionSignature signature="def distance_to(location: Location) -> int" />
@@ -50,11 +49,10 @@ The cardinal direction pointing towards the target location." />
 <PyFunction docString="Calculate the squared Euclidean distance from this location to another.
 
 Args:
-location: The target location.
+    location: The target location.
 
 Returns:
-int: The squared distance between the two locations." />
-
+    int: The squared distance between the two locations." />
 ### is_adjacent_to
 
 <PyFunctionSignature signature="def is_adjacent_to(location: Location) -> bool" />
@@ -62,7 +60,8 @@ int: The squared distance between the two locations." />
 <PyFunction docString="Check if this Location is adjacent to another Location.
 
 Arguments:
-location: The target location.
+    location: The target location.
 
 Returns:
-True if the other location is adjacent, else False." />
+    True if the other location is adjacent, else False." />
+
