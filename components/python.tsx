@@ -10,7 +10,7 @@ function parseDocstring(docstring: string) {
     raises: "",
   }
 
-  const lines = docstring.split("\n").map(line => line.replace(/^\s+|\s+$/g, ""))
+  const lines = docstring.split("\n").map((line) => line.replace(/^\s+|\s+$/g, ""))
 
   let currentSection: keyof typeof sections = "description"
   for (const line of lines) {
@@ -46,18 +46,18 @@ function parseDocstring(docstring: string) {
 }
 
 function renderDescriptionLine(line: string) {
-  const parts = line.split(/(`[^`]+`)/g);
+  const parts = line.split(/(`[^`]+`)/g)
   return parts.map((part, i) => {
     if (part.startsWith("`") && part.endsWith("`")) {
-      const content = part.slice(1, -1);
+      const content = part.slice(1, -1)
       return (
         <code key={i} className="font-mono ">
           {content}
         </code>
-      );
+      )
     }
-    return <Fragment key={i}>{part}</Fragment>;
-  });
+    return <Fragment key={i}>{part}</Fragment>
+  })
 }
 
 export function PyFunction({ docString }: { docString: string }) {
@@ -83,15 +83,11 @@ export function PyFunction({ docString }: { docString: string }) {
               </h4>
               <div className="space-y-2">
                 {doc.arguments.map((arg, i) => {
-                  const [name, description] = arg.split(":").map(s => s.trim());
+                  const [name, description] = arg.split(":").map((s) => s.trim())
                   return (
                     <div key={i} className="flex items-start gap-2">
-                      <span className="font-mono">
-                        {name}:
-                      </span>
-                      <span className="">
-                        {description}
-                      </span>
+                      <span className="font-mono">{name}:</span>
+                      <span className="">{description}</span>
                     </div>
                   )
                 })}
@@ -115,15 +111,11 @@ export function PyFunction({ docString }: { docString: string }) {
               </h4>
               <div>
                 {doc.raises.split("\n").map((raise, i) => {
-                  const [name, description] = raise.split(":").map(s => s.trim());
+                  const [name, description] = raise.split(":").map((s) => s.trim())
                   return (
                     <div key={i} className="flex items-start gap-2">
-                      <span className="font-mono">
-                        {name}:
-                      </span>
-                      <span className="">
-                        {description}
-                      </span>
+                      <span className="font-mono">{name}:</span>
+                      <span className="">{description}</span>
                     </div>
                   )
                 })}
