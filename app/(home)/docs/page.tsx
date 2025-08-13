@@ -82,14 +82,15 @@ export default function DocsIndexPage() {
                   <Icon className="w-6 h-6 text-cyan-300" />
                 </div>
                 <span
-                  className={`text-xs font-mono px-2 py-1 rounded ${status === "ESSENTIAL"
-                    ? "bg-green-500/20 text-green-400"
-                    : status === "COMPLETE"
-                      ? "bg-blue-500/20 text-blue-400"
-                      : status === "UPDATED"
-                        ? "bg-cyan-500/20 text-cyan-400"
-                        : "bg-yellow-500/20 text-yellow-400"
-                    }`}
+                  className={`text-xs font-mono px-2 py-1 rounded ${
+                    status === "ESSENTIAL"
+                      ? "bg-green-500/20 text-green-400"
+                      : status === "COMPLETE"
+                        ? "bg-blue-500/20 text-blue-400"
+                        : status === "UPDATED"
+                          ? "bg-cyan-500/20 text-cyan-400"
+                          : "bg-yellow-500/20 text-yellow-400"
+                  }`}
                 >
                   {status}
                 </span>

@@ -1,4 +1,4 @@
-name: Docs Build Check 
+name: Docs Build Check
 
 on:
   pull_request:
@@ -6,13 +6,13 @@ on:
 
 jobs:
   build-check:
-    name: Test Build 
+    name: Test Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Bun 
+      - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest

@@ -16,4 +16,4 @@ bun install
 bun run dev
 ```
 
-3. Open your browser at `http://localhost:3000` to view the docs site. 
+3. Open your browser at `http://localhost:3000` to view the docs site.
