@@ -27,7 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv add griffe
+          uv add griffe yaml
           uv pip install aegis-game --no-deps
 
       - name: Generate api
