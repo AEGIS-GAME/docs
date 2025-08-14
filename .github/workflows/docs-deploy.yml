@@ -27,8 +27,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv add griffe
-          uv pip install aegis-game --no-deps
+          uv sync
+          uv add -U aegis-game
 
       - name: Generate api
         run: uv run scripts/gen_api.py
