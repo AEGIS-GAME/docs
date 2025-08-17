@@ -8,7 +8,7 @@ const config = {
   output: "export",
   distDir: "build",
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  basePath: process.env.NODE_ENV === "production" ? "/aegis-docs" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/docs" : "",
   trailingSlash: true,
   images: {
     unoptimized: true,
