@@ -15,7 +15,7 @@ from typing import Any, TypedDict
 
 import griffe
 
-PACKAGE = griffe.load("_aegis")
+PACKAGE = griffe.load("_aegis_game")
 API_PATH = Path("./content/docs/api")
 AGENT_API_OUTPUT_PATH = API_PATH / "agent.mdx"
 
@@ -314,8 +314,8 @@ class ResourceReader:
 
     @classmethod
     def get_all_exports(cls) -> list[str]:
-        """Read and parse __init__.py from the `aegis` package to extract __all__."""
-        source = cls.read_source("aegis", "__init__.py")
+        """Read and parse __init__.py from the `aegis_game` package to extract __all__."""
+        source = cls.read_source("aegis_game", "__init__.py")
         if source is None:
             return []
 
@@ -345,7 +345,7 @@ class ResourceReader:
     @classmethod
     def get_method_names(cls) -> list[str]:
         """Extract method names from the game.py methods function."""
-        source = cls.read_source("_aegis", "game.py")
+        source = cls.read_source("_aegis_game", "game.py")
         if source is None:
             return []
 
