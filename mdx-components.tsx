@@ -95,14 +95,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     a: ({ className, ...props }) => (
       <a
         className={cn(
-          "relative inline-block font-medium text-cyan-400 transition-all duration-500 ease-out",
-          "focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-slate-900",
-          "no-underline cursor-pointer",
-          "after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px]",
-          "after:bg-gradient-to-r after:from-cyan-500 after:via-cyan-400 after:to-cyan-300",
-          "after:rounded-full after:transition-all after:duration-500 after:ease-out",
-          "after:shadow-[0_0_4px_rgb(34,211,238)]",
-          "hover:after:w-full hover:after:shadow-[0_0_8px_rgb(34,211,238)]",
+          "text-cyan-400 font-medium cursor-pointer hover:text-cyan-600 no-underline",
           className
         )}
         {...props}

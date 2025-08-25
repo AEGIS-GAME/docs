@@ -1,6 +1,6 @@
 # Aegis Docs
 
-This repo contains the [Aegis](https://github.com/CPSC-383/aegis) project documentation website.
+This repo contains the [Aegis](https://github.com/AEGIS-GAME/aegis) project documentation website.
 
 ## Local Development
 

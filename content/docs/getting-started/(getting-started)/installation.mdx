@@ -3,9 +3,19 @@ title: Installation
 description: A step-by-step guide to install Aegis on your system.
 ---
 
-## Prerequisites: Python 3.12.10
+## Installation Overview
 
-Aegis requires Python `3.12.10`. Before you begin, check if it’s already installed:
+You can install Aegis using either **standard Python 3.12.10** or **UV**.  
+
+- **New or beginner users:** Use standard Python for simplicity.  
+- **Advanced users or those who prefer faster package management:** UV is optional and can simplify dependency installation.
+
+Below, we’ll walk through the installation process while noting differences where applicable.
+
+
+## Prerequisites
+
+Check your Python version:
 
 <Tabs items={['Mac/Linux', 'Windows']}>
 
@@ -39,21 +49,146 @@ py -3.12 --version
 
 </Tabs>
 
-If the output doesn't show Python `3.12.10`, follow the Python Setup Guide to install it
-and then come back.
-
-## Installation
+If the output doesn't show Python `3.12.10`, follow the [Python Setup Guide](../../../guides/python)
+or install `uv` from the [uv installation page](https://docs.astral.sh/uv/getting-started/installation/).
 
 <Steps>
 
-### Download the assignment
+### Create an Aegis Directory
 
-### Navigate into the directory
+You can create this folder using either your file explorer or the terminal. Name it whatever you like,
+since it will be used for both assignments that require Aegis. Just make sure the folder name does not
+contain spaces, as this can sometimes cause issues with the client. 
 
-### Run the Setup Script
+Examples:
 
-#### Optional: Manual Setup
+```bash
+mkdir aegis
+```
+
+or 
+
+```bash
+mkdir cpsc-383-aegis
+```
+
+Run all the commands shown below inside aegis directory you created.
+
+### Create a Virtual Environment
+
+Virtual environments isolate project dependencies from your system Python.
+
+**Python Users**
+
+<Tabs items={['Mac/Linux', 'Windows']}>
+
+<Tab value="Mac/Linux">
+
+Use `python3` if it points to version 3.12, otherwise specify `python3.12`:
+
+```bash
+python3 -m venv .venv
+```
+
+or
+
+```bash
+python3.12 -m venv .venv
+```
+
+</Tab>
+
+<Tab value="Windows">
+
+Use `python` if it points to version 3.12, otherwise specify `py -3.12`:
+
+```bash
+python -m venv .venv
+```
+
+or
+
+```bash
+py -m venv .venv
+```
+
+</Tab>
+
+</Tabs>
+
+**UV Users**
+
+```bash
+uv venv --python 3.12 .venv
+```
+
+### Activate the Virtual Environment
+
+```bash tab="Mac/Linux"
+source .venv/bin/activate
+```
+
+```bash tab="Windows"
+.\.venv\Scripts\Activate.ps1
+```
+
+Once activated, you can use the `python` executable (it will point to the venv’s interpreter).
+
+### Download Aegis 
+
+**Python Users**
+
+```bash
+pip install aegis-game
+```
+
+**UV Users**
+
+```bash
+uv pip install aegis-game
+```
+
+### Initialize
+
+```bash
+aegis init
+```
+
+<Callout type="warning">
+
+If the client fails to download, you can manually download the latest release
+from [Aegis GitHub Releases](https://github.com/AEGIS-GAME/aegis/releases).
+
+Look for the latest `aegis-client: vx.x.x` tag and download the client for your operating system.
+
+Make sure you also add the client app/executable under the `client` folder show below.
+
+</Callout>
 
 ### Confirm Installation
+
+If everything installed correctly, your folder structure should look like this:
+
+<Tree>
+  <TreeItem name="aegis" type="folder">
+    <TreeItem name="agents" type="folder">
+      <TreeItem name="agent_path" type="folder">
+        <TreeItem name="main.py"/>
+      </TreeItem>
+    </TreeItem>
+    <TreeItem name="client" type="folder">
+      <TreeItem name="<client for your system>"/>
+    </TreeItem>
+    <TreeItem name="config" type="folder">
+      <TreeItem name="config.yaml"/>
+    </TreeItem>
+    <TreeItem name="worlds" type="folder">
+      <TreeItem name="<world1>.world"/>
+      <TreeItem name="<world2>.world"/>
+      <TreeItem name="<world3>.world"/>
+      <TreeItem name="..."/>
+    </TreeItem>
+  </TreeItem>
+</Tree>
 
 </Steps>

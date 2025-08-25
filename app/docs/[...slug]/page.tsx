@@ -2,6 +2,7 @@ import { source } from "@/lib/source"
 import { DocsPage, DocsBody, DocsDescription, DocsTitle } from "fumadocs-ui/page"
 import { notFound } from "next/navigation"
 import { getMDXComponents } from "@/mdx-components"
+import { createRelativeLink } from "fumadocs-ui/mdx"
 
 export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params
@@ -20,7 +21,9 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        <MDX components={getMDXComponents()} />
+        <MDX components={getMDXComponents({
+          a: createRelativeLink(source, page)
+        })} />
       </DocsBody>
     </DocsPage>
   )

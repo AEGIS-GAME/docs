@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { getMDXComponents } from "@/mdx-components"
 import { InlineTOC } from "@/components/inline-toc"
-import { guides } from "@/lib/source"
+import { guides, source } from "@/lib/source"
 import { NebulaBackground } from "@/components/nebula"
 import {
   ArrowLeft,
@@ -14,13 +14,15 @@ import {
   Eye,
   CheckCircle,
 } from "lucide-react"
+import { createRelativeLink } from "fumadocs-ui/mdx"
+
 
 export default async function Page(props: { params: Promise<{ slug: string }> }) {
   const params = await props.params
   const page = guides.getPage([params.slug])
 
   if (!page) notFound()
-  const Mdx = page.data.body
+  const MDX = page.data.body
 
   return (
     <div className="relative min-h-screen text-white overflow-hidden">
@@ -134,7 +136,9 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
                 </div>
               </div>
 
-              <Mdx components={getMDXComponents()} />
+              <MDX components={getMDXComponents({
+                a: createRelativeLink(source, page)
+              })} />
             </div>
           </div>
         </div>

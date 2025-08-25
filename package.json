@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "2.1.2",
-  "homepage": "https://cpsc-383.github.io/aegis/",
+  "homepage": "https://aegis-game.github.io/docs/",
   "private": true,
   "scripts": {
     "lint": "next lint",

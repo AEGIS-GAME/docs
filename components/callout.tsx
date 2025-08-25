@@ -18,58 +18,43 @@ const getCalloutTheme = (type: string) => {
   switch (type) {
     case "info":
       return {
-        container: "bg-slate-900/70 border-cyan-500/30 shadow-cyan-500/20",
+        container: "bg-slate-900/70 shadow-cyan-500/20",
         accent: "bg-cyan-500/50",
         icon: "text-cyan-400",
         title: "text-cyan-300",
         content: "text-slate-300",
-        glow: "shadow-lg shadow-cyan-500/10",
-        status: "INFORMATION",
-        statusColor: "text-cyan-400 bg-cyan-500/20",
       }
     case "warning":
       return {
-        container: "bg-slate-900/70 border-yellow-500/30 shadow-yellow-500/20",
+        container: "bg-slate-900/70 shadow-yellow-500/20",
         accent: "bg-yellow-500/50",
         icon: "text-yellow-400",
         title: "text-yellow-300",
         content: "text-slate-300",
-        glow: "shadow-lg shadow-yellow-500/10",
-        status: "CAUTION",
-        statusColor: "text-yellow-400 bg-yellow-500/20",
       }
     case "error":
       return {
-        container: "bg-slate-900/70 border-red-500/30 shadow-red-500/20",
+        container: "bg-slate-900/70 shadow-red-500/20",
         accent: "bg-red-500/50",
         icon: "text-red-400",
         title: "text-red-300",
         content: "text-slate-300",
-        glow: "shadow-lg shadow-red-500/10",
-        status: "CRITICAL",
-        statusColor: "text-red-400 bg-red-500/20",
       }
     case "success":
       return {
-        container: "bg-slate-900/70 border-green-500/30 shadow-green-500/20",
+        container: "bg-slate-900/70 shadow-green-500/20",
         accent: "bg-green-500/50",
         icon: "text-green-400",
         title: "text-green-300",
         content: "text-slate-300",
-        glow: "shadow-lg shadow-green-500/10",
-        status: "CONFIRMED",
-        statusColor: "text-green-400 bg-green-500/20",
       }
     default:
       return {
-        container: "bg-slate-900/70 border-slate-500/30 shadow-slate-500/20",
+        container: "bg-slate-900/70 shadow-slate-500/20",
         accent: "bg-slate-500/50",
         icon: "text-slate-400",
         title: "text-slate-300",
         content: "text-slate-300",
-        glow: "shadow-lg shadow-slate-500/10",
-        status: "NOTICE",
-        statusColor: "text-slate-400 bg-slate-500/20",
       }
   }
 }
@@ -104,7 +89,6 @@ export const Callout = forwardRef<HTMLDivElement, CalloutProps>(
         className={cn(
           "relative flex gap-4 my-6 rounded-lg border backdrop-blur-sm p-4 text-sm overflow-hidden",
           theme.container,
-          theme.glow,
           className
         )}
         {...props}
@@ -115,14 +99,6 @@ export const Callout = forwardRef<HTMLDivElement, CalloutProps>(
           <div
             className={`absolute inset-0 ${theme.accent} animate-pulse opacity-60`}
           />
-        </div>
-
-        <div className="absolute top-2 right-2">
-          <span
-            className={`text-xs font-mono px-2 py-1 rounded-full ${theme.statusColor} border border-current/30`}
-          >
-            {theme.status}
-          </span>
         </div>
 
         <div className="flex-shrink-0 mt-0.5">

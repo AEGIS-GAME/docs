@@ -31,7 +31,7 @@ export default function AegisVersionDisplay({ version }: { version: string }) {
         </div>
       </div>
       <Link
-        href="https://github.com/CPSC-383/aegis"
+        href="https://github.com/AEGIS-GAME/aegis"
         target="_blank"
         className="group flex items-center gap-3 text-xs font-mono text-slate-400 hover:text-cyan-300 transition-colors"
       >
