@@ -56,9 +56,8 @@ or install `uv` from the [uv installation page](https://docs.astral.sh/uv/gettin
 
 ### Create an Aegis Directory
 
-You can create this folder using either your file explorer or the terminal. Name it whatever you like,
-since it will be used for both assignments that require Aegis. Just make sure the folder name does not
-contain spaces, as this can sometimes cause issues with the client. 
+You can create this folder using either your file explorer or the terminal. Name it whatever you like.
+Just make sure the folder name does not contain spaces, as this can sometimes cause issues with the client. 
 
 Examples:
 
@@ -154,6 +153,12 @@ uv pip install aegis-game
 aegis init
 ```
 
+If you are initializing the mas assignment use:
+
+```bash
+aegis init --type mas
+```
+
 <Callout type="warning">
 
 If the client fails to download, you can manually download the latest release
@@ -167,7 +172,8 @@ Make sure you also add the client app/executable under the `client` folder show 
 
 ### Confirm Installation
 
-If everything installed correctly, your folder structure should look like this:
+If everything installed correctly, your folder structure should look like this for the pathfinding
+assignment:
 
 <Tree>
   <TreeItem name="aegis" type="folder">
@@ -190,5 +196,54 @@ If everything installed correctly, your folder structure should look like this:
     </TreeItem>
   </TreeItem>
 </Tree>
+
+Like this for the mas assignment:
+
+<Tree>
+  <TreeItem name="aegis" type="folder">
+    <TreeItem name="agents" type="folder">
+      <TreeItem name="agent_mas" type="folder">
+        <TreeItem name="main.py"/>
+      </TreeItem>
+    </TreeItem>
+    <TreeItem name="client" type="folder">
+      <TreeItem name="<client for your system>"/>
+    </TreeItem>
+    <TreeItem name="config" type="folder">
+      <TreeItem name="config.yaml"/>
+    </TreeItem>
+    <TreeItem name="prediction_data" type="folder">
+      <TreeItem name="testing" type="folder">
+        <TreeItem name="x_test_symbols.npy"/>
+        <TreeItem name="y_test_symbols.npy"/>
+      </TreeItem>
+      <TreeItem name="training" type="folder">
+        <TreeItem name="x_train_symbols.npy"/>
+        <TreeItem name="y_train_symbols.npy"/>
+      </TreeItem>
+    </TreeItem>
+    <TreeItem name="worlds" type="folder">
+      <TreeItem name="<world1>.world"/>
+      <TreeItem name="<world2>.world"/>
+      <TreeItem name="<world3>.world"/>
+      <TreeItem name="..."/>
+    </TreeItem>
+  </TreeItem>
+</Tree>
+
+### Update Stub File
+
+The `aegis init` command creates a default `config.yaml`.
+If your professor provided a modified `config.yaml`, replace the default with their 
+version before proceeding.
+
+Next, run:
+
+```bash
+aegis forge
+```
+
+This updates your stub file for the assignment, providing proper LSP typing and hiding unnecessary functions,
+so you can focus only on what’s required.
 
 </Steps>
