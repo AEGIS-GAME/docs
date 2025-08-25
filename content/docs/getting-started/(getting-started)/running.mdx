@@ -12,9 +12,9 @@ while the client provides a more visual experience.
 To run Aegis from the terminal, use the aegis command:
 
 ```
-aegis [--amount AMOUNT] --world WORLD \
-  --rounds ROUNDS --agent AGENT \
-  [--client] [--debug] [--log]
+aegis launch [-h] --world WORLD [WORLD ...]
+  [--amount AMOUNT] [--rounds ROUNDS] [--agent AGENT]
+  [--agent2 AGENT2] [--client] [--debug] [--log]
 ```
 
 ### Example
@@ -22,8 +22,8 @@ aegis [--amount AMOUNT] --world WORLD \
 Here's an example of running Aegis with a "test" agent, `ExampleWorld.world` and 50 rounds:
 
 ```
-aegis --world worlds/ExampleWorld.world \
-  --rounds 50 --agent agents/test/main.py
+aegis launch --world ExampleWorld \
+  --rounds 50 --agent test 
 ```
 
 ### Example with Logging
@@ -31,8 +31,8 @@ aegis --world worlds/ExampleWorld.world \
 To save console output to a log file:
 
 ```
-aegis --world worlds/ExampleWorld.world \
-  --rounds 50 --agent agents/test/main.py \
+aegis launch --world ExampleWorld \
+  --rounds 50 --agent test \
   --log
 ```
 
@@ -40,23 +40,19 @@ aegis --world worlds/ExampleWorld.world \
 
 ```
 options:
-  -h, --help       show this help message and exit
-  --amount AMOUNT  Number of agents to run (default = 1)
-  --world WORLD    World file to use.
-  --rounds ROUNDS  Number of simulation rounds
-  --agent AGENT    Path to the agent file
-  --client         Set to wait for the client to connect
-  --debug          Enable agent debug logging output
-  --log            Enable AEGIS console output logging to file
-
+  -h, --help            show this help message and exit
+  --world WORLD [WORLD ...]
+                        One or more world names (without .world extension), separated by spaces.
+  --amount AMOUNT       Number of agents to run (default = 1)
+  --rounds ROUNDS       Number of simulation rounds (default = 1000)
+  --agent AGENT         Name of the agent folder under 'agents/' with a main.py file for team Goobs (e.g.,
+                        'agent_path', 'agent_mas')
+  --agent2 AGENT2       Name of the agent folder under 'agents/' with a main.py file for team Voidseers (e.g.,
+                        'agent_path', 'agent_mas')
+  --client              Used by the client, tells the server to wait for the client to connect
+  --debug               Enable agent debug logging output
+  --log                 Enable AEGIS console output logging to a file
 ```
-
-### Logging Types
-
-Aegis supports two distinct types of logging:
-
-- **`--debug`**: Enables debug output from individual agents, showing their internal logic and decision-making process
-- **`--log`**: Captures all AEGIS console output (simulation events, agent actions, errors, etc.) to a timestamped log file in the `logs/` directory
 
 ## Client Usage
 
@@ -74,7 +70,7 @@ open Aegis.app
 
 Or simply double-click `Aegis.app` from Finder.
 
-If you see the following error, follow the mac error guide.
+If you see the following error, follow the [mac error guide](../../../errors/mac/security).
 
 ![Mac Error](/mac_error.png)
 
@@ -139,3 +135,26 @@ or the button changes to **Kill Game**.
 If everything is configured correctly, the simulation will start and display in the main window.
 
 </Steps>
+
+## Logging Types
+
+Aegis supports two distinct types of logging.
+
+### Debug
+
+By default, all `log()` calls in your agent file are disabled.
+To see the log output, run your command with the `--debug` flag.
+
+In the client, you can also enable or disable debug logging through the settings.
+
+### Log
+
+Use the `--log` flag to save game output to a file with timestamps.
+This makes it easier to review or search through past runs.
+
+<Callout>
+
+Logging only works in the console. Log files are saves in the `logs/` folder.
+
+</Callout>
+

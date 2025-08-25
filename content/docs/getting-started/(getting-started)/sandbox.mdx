@@ -1,0 +1,53 @@
+---
+title: Sandbox Environment
+description: The restricted Python environment.
+---
+
+By default, all agents run inside a [restricted Python](https://restrictedpython.readthedocs.io/en/latest/) sandbox.  
+This means many of Python’s standard features are disabled.
+
+Attempting to use anything not listed below will cause your agent to crash.
+
+### Printing
+
+`print()` is disabled in the sandbox. Use the `log()` function instead to output messages.
+
+### Imports
+
+Only the following imports are allowed:
+
+```py
+self.allowed_modules: set[str] = {
+    "os",
+    "typing",
+    "pathlib",
+    "random",
+    "heapq",
+    "math",
+    "json",
+    "re",
+    "enum",
+    "numpy",
+    "tensorflow",
+    "tf",
+}
+```
+
+And the default `aegis.stub`.
+
+### Restricted Names in Agent Files
+
+Any function, variable, or class in your agent file that starts with `_` will cause your agent to crash.
+Avoid defining any names that begin with an underscore.
+
+This restriction is in place to prevent agents from accessing internal Aegis functionality.
+
+```py
+# Safe
+def pathfind() -> None:
+  ...
+
+# Unsafe. Will crash the agent.
+def _pathfind() -> None:
+  ...
+```
