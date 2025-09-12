@@ -7,11 +7,11 @@ description: Represents a survivor in the world.
 
 ### id
 
-<PyAttribute type="int" value="" docString="" />
+<PyAttribute type="int" value="" docString="Unique identifier for the survivor." />
 
 ### health
 
-<PyAttribute type="int" value="" docString="" />
+<PyAttribute type="int" value="" docString="Current health of the survivor." />
 
 
 ## Methods
@@ -23,5 +23,21 @@ description: Represents a survivor in the world.
 <PyFunction docString="Check if the survivor is alive.
 
 Returns:
-    bool: True if the survivor is ALIVE, False otherwise." />
+    True if the survivor is ALIVE, False otherwise." />
+### set_state
+
+<PyFunctionSignature signature="def set_state(state: State) -> None" />
+
+<PyFunction docString="Set the survivor's state.
+
+Args:
+    state: The new state for the survivor." />
+### get_state
+
+<PyFunctionSignature signature="def get_state() -> State" />
+
+<PyFunction docString="Get the survivor's current state.
+
+Returns:
+    The current state of the survivor." />
 

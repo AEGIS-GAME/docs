@@ -11,11 +11,11 @@ description: Represents a coordinate location with x and y integer values.
 
 ### x
 
-<PyAttribute type="int" value="" docString="" />
+<PyAttribute type="int" value="" docString="The x-coordinate." />
 
 ### y
 
-<PyAttribute type="int" value="" docString="" />
+<PyAttribute type="int" value="" docString="The y-coordinate." />
 
 
 ## Methods
@@ -24,32 +24,32 @@ description: Represents a coordinate location with x and y integer values.
 
 <PyFunctionSignature signature="def add(direction: Direction) -> Location" />
 
-<PyFunction docString="Return a new Location by moving this Location in the specified direction.
+<PyFunction docString="Return a new location by moving this Location in the specified direction.
 
-Arguments:
-    direction (Direction): The direction to move.
+Args:
+    direction: The direction to move.
 
 Returns:
-    Location: A new Location in the given direction." />
+    A new location in the given direction." />
 ### direction_to
 
 <PyFunctionSignature signature="def direction_to(location: Location) -> Direction" />
 
-<PyFunction docString="Determine the cardinal Direction from this Location to another Location.
+<PyFunction docString="Determine the cardinal direction from this location to another location.
 
-Arguments:
-    location (Location): The target location.
+Args:
+    location: The target location.
 
 Returns:
-    Direction: The cardinal direction pointing towards the target location." />
+    The cardinal direction pointing towards the target location." />
 ### distance_to
 
 <PyFunctionSignature signature="def distance_to(location: Location) -> int" />
 
-<PyFunction docString="Calculate the squared Euclidean distance from this Location to another.
+<PyFunction docString="Calculate the squared Euclidean distance from this location to another.
 
-Arguments:
-    location (Location): The target location.
+Args:
+    location: The target location.
 
 Returns:
     int: The squared distance between the two locations." />
@@ -60,8 +60,8 @@ Returns:
 <PyFunction docString="Check if this Location is adjacent to another Location.
 
 Arguments:
-    location (Location): The target location.
+    location: The target location.
 
 Returns:
-    bool: True if the other location is adjacent, else False." />
+    True if the other location is adjacent, else False." />
 

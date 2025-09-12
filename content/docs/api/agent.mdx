@@ -7,99 +7,200 @@ description: Agent functions to interact with the world.
 
 <PyFunctionSignature signature="def get_round_number() -> int" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Return the current round number." />
 ### get_id
 
 <PyFunctionSignature signature="def get_id() -> int" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Return the id of the agent." />
+### get_type
+
+<PyFunctionSignature signature="def get_type() -> AgentType" />
+
+<PyFunction docString="Return the type of the agent." />
 ### get_team
 
 <PyFunctionSignature signature="def get_team() -> Team" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Return the current team of the agent." />
 ### get_location
 
 <PyFunctionSignature signature="def get_location() -> Location" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Return the current location of the agent." />
 ### get_energy_level
 
 <PyFunctionSignature signature="def get_energy_level() -> int" />
+
+<PyFunction docString="Return the current energy level of the agent." />
+### get_lumens
+
+<PyFunctionSignature signature="def get_lumens() -> int" />
 
 <PyFunction docString="None" />
 ### move
 
 <PyFunctionSignature signature="def move(direction: Direction) -> None" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Move the agent in the specified direction.
+
+Args:
+    direction: The direction in which the agent should move.
+
+Raises:
+    AgentError: If the move is invalid." />
 ### save
 
 <PyFunctionSignature signature="def save() -> None" />
 
-<PyFunction docString="Determine if there is a valid surv to save at this location, if so, (try to) save it." />
+<PyFunction docString="Save a survivor located at the agent's current location.
+
+If no survivor is present, the function has no effect.
+
+Raises:
+    AgentError: If saving is invalid according to game rules." />
 ### recharge
 
 <PyFunctionSignature signature="def recharge() -> None" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Recharge the agent's energy if on a charging cell.
+
+Energy restored is equal to `Constants.NORMAL_CHARGE` per recharge,
+but cannot exceed `Constants.MAX_ENERGY_LEVEL`.
+
+Does nothing if the agent is not on a charging cell." />
+### dig
+
+<PyFunctionSignature signature="def dig() -> None" />
+
+<PyFunction docString="Dig rubble at the agent's current location.
+
+Raises:
+    AgentError: If digging is invalid according to game rules." />
 ### predict
 
 <PyFunctionSignature signature="def predict(surv_id: int, label: np.int32) -> None" />
 
-<PyFunction docString="None" />
-### send_message
+<PyFunction docString="Submit a prediction.
 
-<PyFunctionSignature signature="def send_message(message: str, dest_ids: list[int]) -> None" />
+Args:
+    surv_id: The unique ID of the survivor.
+    label: The predicted symbol label/classification.
 
-<PyFunction docString="None" />
-### read_messages
-
-<PyFunctionSignature signature="def read_messages(round_num: int = -1) -> list[Message]" />
-
-<PyFunction docString="None" />
-### drone_scan
-
-<PyFunctionSignature signature="def drone_scan(loc: Location) -> None" />
-
-<PyFunction docString="None" />
-### get_cell_info_at
-
-<PyFunctionSignature signature="def get_cell_info_at(loc: Location) -> CellInfo" />
-
-<PyFunction docString="None" />
-### spawn_agent
-
-<PyFunctionSignature signature="def spawn_agent(loc: Location) -> None" />
-
-<PyFunction docString="None" />
+Raises:
+    AgentError: If predictions are not enabled." />
 ### read_pending_predictions
 
 <PyFunctionSignature signature="def read_pending_predictions() -> list[tuple[int, NDArray[np.uint8], NDArray[np.int32]]]" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Retrieve the list of pending predictions stored by the agent's team.
+
+Each prediction is represented as a tuple containing:
+
+    1. surv_id: The ID of the saved survivor that triggered this prediction.
+    2. image_to_predict: The symbol image data for model input.
+    3. all_unique_labels: The set of possible symbol labels.
+
+Returns:
+    A list of pending symbol predictions. Returns an empty list if no pending
+    predictions are available.
+
+Raises:
+    AgentError: If predictions are not enabled." />
+### send_message
+
+<PyFunctionSignature signature="def send_message(message: str, dest_ids: list[int]) -> None" />
+
+<PyFunction docString="Send a message to team members, excluding self.
+
+If `dest_ids` is empty, the message is broadcast to all team members
+except the sender.
+
+Args:
+    message: The content of the message to send.
+    dest_ids: A list of agent IDs to send the message to." />
+### read_messages
+
+<PyFunctionSignature signature="def read_messages(round_num: int = -1) -> list[Message]" />
+
+<PyFunction docString="Retrieve messages from the agent's message buffer.
+
+Args:
+    round_num: If provided only messages from this round are returned.
+
+Returns:
+    A list of messages." />
+### drone_scan
+
+<PyFunctionSignature signature="def drone_scan(loc: Location) -> None" />
+
+<PyFunction docString="Scan a location using a drone.
+
+Args:
+    loc: The location to scan.
+
+Raises:
+    AgentError: If drone scan is not enabled or location is invalid." />
+### get_cell_info_at
+
+<PyFunctionSignature signature="def get_cell_info_at(loc: Location) -> CellInfo" />
+
+<PyFunction docString="Return the cell info at a given location.
+
+If the location is adjacent (1 tile away) to the agent or has been scanned by a drone,
+all layers and agents at that location are visible. Otherwise, only the top layer is
+visible and agent presence is hidden.
+
+If `HIDDEN_MOVE_COSTS` feature is enabled, unvisited cells have `move_cost = 1`.
+
+Args:
+    loc: The location to query.
+
+Returns:
+    Information about the cell at the given location." />
+### spawn_agent
+
+<PyFunctionSignature signature="def spawn_agent(loc: Location, agent_type: AgentType) -> None" />
+
+<PyFunction docString="Spawn an agent at a specified location with a given type.
+
+Args:
+    loc: A valid spawn location.
+    agent_type: The type of agent to spawn.
+
+Raises:
+    AgentError: If spawn location is invalid or max amount reached." />
 ### log
 
 <PyFunctionSignature signature="def log(args: object = ()) -> None" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Log a message.
+
+Args:
+    *args: One or more items to log." />
 ### on_map
 
 <PyFunctionSignature signature="def on_map(loc: Location) -> bool" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Check whether a location is within the bounds of the world.
+
+Args:
+    loc: The location to check.
+
+Returns:
+    True if the location is on the map, False otherwise." />
 ### get_survs
 
 <PyFunctionSignature signature="def get_survs() -> list[Location]" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Return a list of survivor locations." />
 ### get_spawns
 
 <PyFunctionSignature signature="def get_spawns() -> list[Location]" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Return a list of spawn locations." />
 ### get_charging_cells
 
 <PyFunctionSignature signature="def get_charging_cells() -> list[Location]" />
 
-<PyFunction docString="None" />
+<PyFunction docString="Return a list of charging locations." />
