@@ -21,7 +21,7 @@ requires-dist = [
 
 [[package]]
 name = "aegis-game"
-version = "2.5.2"
+version = "2.6.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "numpy" },
@@ -31,9 +31,9 @@ dependencies = [
     { name = "restrictedpython" },
     { name = "websocket-server" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/89/79/e1afd38b4c171869c134232282e9f18684ba4bc5fc31054a25320816b6b1/aegis_game-2.5.2.tar.gz", hash = "sha256:9f59dc900d2f4a3df11181503267a6e4439a94bd86a74cc28683e2e2202c3a88", size = 3478813, upload-time = "2025-09-11T17:14:22.41Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/66/e7/4439018846ce604b3463771837c9dea75adf982deb686b5071543f8ed77f/aegis_game-2.6.0.tar.gz", hash = "sha256:eeb66366d52f79b2c1a2f3c5d8abc8548b2f01664cb1e4266d2813bc24f91606", size = 3481889, upload-time = "2025-09-12T16:30:39.837Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c2/b6/ef8e37159d5ea772ad7ec6e30cbf86201b57df7951d444de4ce15b0b83ce/aegis_game-2.5.2-py3-none-any.whl", hash = "sha256:a780bad9b80dd8b78b081ad175dba0b9cb4f1a90a146ec4b86bd0784b4cff262", size = 1617224, upload-time = "2025-09-11T17:14:20.392Z" },
+    { url = "https://files.pythonhosted.org/packages/c8/51/dff060cae327cf78d1953fc918063d8e9cc022442163dcf4e1e0d0da9f7a/aegis_game-2.6.0-py3-none-any.whl", hash = "sha256:e98b5e6c1308e36879c95c6591adf870f66651b8d1d90e4b4f248ce834876036", size = 1617222, upload-time = "2025-09-12T16:30:38.22Z" },
 ]
 
 [[package]]
