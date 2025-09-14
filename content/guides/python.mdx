@@ -6,7 +6,7 @@ author: Dante
 
 ## Overview
 
-This section shows you how to install Python 3.12.10 on Mac, Windows, and Linux.
+This section shows you how to install Python 3.13 on Mac, Windows, and Linux.
 
 You can use the navigation chart above to jump your OS.
 
@@ -65,18 +65,18 @@ brew --version
 
 You should see a version number confirming it's correctly installed.
 
-### Install Python 3.12.10
+### Install Python 3.13
 
 Now install Python with:
 
 ```bash
-brew install python@3.12
+brew install python@3.13
 ```
 
-If the output mentions conflicting files or says it can't link `python@3.12`, run:
+If the output mentions conflicting files or says it can't link `python@3.13`, run:
 
 ```bash
-brew link --overwrite python@3.12
+brew link --overwrite python@3.13
 ```
 
 ### Confirm Python Version
@@ -84,14 +84,14 @@ brew link --overwrite python@3.12
 Verify the installation with:
 
 ```bash
-python3.12 --version
+python3.13 --version
 ```
 
-You should see `Python 3.12.10`.
+You should see `Python 3.13.x`.
 
 </Steps>
 
-Now that Python 3.12.10 is installed, you're ready to [install aegis](../../docs/getting-started/installation).
+Now that Python 3.13 is installed, you're ready to [install aegis](../../docs/getting-started/installation).
 
 ## Windows
 
@@ -141,23 +141,23 @@ Open Command Prompt and run:
 python --version
 ```
 
-You should see `Python 3.12.10`.
+You should see `Python 3.13.x`.
 
 If not, try:
 
 ```bash
-py -3.12 --version
+py -3.13 --version
 ```
 
 Still not working? Try restarting your PC and running the command again.
 
 </Steps>
 
-Now that Python 3.12.10 is installed, you're ready to [install aegis](../../docs/getting-started/installation).
+Now that Python 3.13 is installed, you're ready to [install aegis](../../docs/getting-started/installation).
 
 ## Linux
 
-You can install Python 3.12.10 on Linux using a package manager or by building from source, depending on your distro.
+You can install Python 3.13 on Linux using a package manager or by building from source, depending on your distro.
 
 <Steps>
 
@@ -175,41 +175,41 @@ This tells you the distribution name and version.
 
 ### Option 1: Ubuntu / Debian
 
-Ubuntu 24.04+ might already have Python 3.12. To install manually:
+Ubuntu 24.04+ might already have Python 3.13. To install manually:
 
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.12
+sudo apt install python3.13
 ```
 
 Confirm with:
 
 ```bash
-python3.12 --version
+python3.13 --version
 ```
 
-You should see `Python 3.12.10`.
+You should see `Python 3.13.x`.
 
 ### Option 2: Arch Linux
 
 Arch users can install it directly from the AUR:
 
 ```bash
-sudo pacman -Sy python312
+sudo pacman -Sy python313
 ```
 
 This usually installs the latest version. Confirm with:
 
 ```bash
-python3.12 --version
+python3.13 --version
 ```
 
-You should see `Python 3.12.10`.
+You should see `Python 3.13.x`.
 
 ### Option 3: Build from Source (Works on Any Distro)
 
-If your package manager doesn't offer Python 3.12.10, you can build it from source.
+If your package manager doesn't offer Python 3.13, you can build it from source.
 
 #### Install Build Dependencies
 
@@ -230,9 +230,9 @@ Just make sure you download the equivalent dev libraries on your distro.
 
 ```bash
 cd /tmp
-wget https://www.python.org/ftp/python/3.12.10/Python-3.12.10.tgz
-tar -xvf Python-3.12.10.tgz
-cd Python-3.12.10
+wget https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tgz
+tar -xvf Python-3.13.7.tgz
+cd Python-3.13.7
 ```
 
 #### Build and Install
@@ -254,19 +254,19 @@ Don't use `make install` -- `make altinstall` avoids overwriting the system’s 
 Restart your terminal and run:
 
 ```bash
-python3.12 --version
+python3.13 --version
 ```
 
-You should see `Python 3.12.10`.
+You should see `Python 3.13.x`.
 
 #### Cleanup
 
 Once Python is installed, you can safely remove the temporary build files:
 
 ```bash
-rm -rf /tmp/Python-3.12.10 /tmp/Python-3.12.10.tgz
+rm -rf /tmp/Python-3.13.7 /tmp/Python-3.13.7.tgz
 ```
 
 </Steps>
 
-Now that Python 3.12.10 is installed, you're ready to [install aegis](../../docs/getting-started/installation/).
+Now that Python 3.13 is installed, you're ready to [install aegis](../../docs/getting-started/installation/).

@@ -5,7 +5,7 @@ description: A step-by-step guide to install Aegis on your system.
 
 ## Installation Overview
 
-You can install Aegis using either **standard Python 3.12.10** or **UV**.  
+You can install Aegis using either **standard Python 3.13** or **UV**.  
 
 - **New or beginner users:** Use standard Python for simplicity.  
 - **Advanced users or those who prefer faster package management:** UV is optional and can simplify dependency installation.
@@ -28,7 +28,7 @@ python3 --version
 or
 
 ```bash
-python3.12 --version
+python3.13 --version
 ```
 
 </Tab>
@@ -42,14 +42,14 @@ python --version
 or
 
 ```bash
-py -3.12 --version
+py -3.13 --version
 ```
 
 </Tab>
 
 </Tabs>
 
-If the output doesn't show Python `3.12.10`, follow the [Python Setup Guide](../../../guides/python)
+If the output doesn't show Python `3.13.x`, follow the [Python Setup Guide](../../../guides/python)
 or install `uv` from the [uv installation page](https://docs.astral.sh/uv/getting-started/installation/).
 
 <Steps>
@@ -83,7 +83,7 @@ Virtual environments isolate project dependencies from your system Python.
 
 <Tab value="Mac/Linux">
 
-Use `python3` if it points to version 3.12, otherwise specify `python3.12`:
+Use `python3` if it points to version 3.13, otherwise specify `python3.13`:
 
 ```bash
 python3 -m venv .venv
@@ -92,14 +92,14 @@ python3 -m venv .venv
 or
 
 ```bash
-python3.12 -m venv .venv
+python3.13 -m venv .venv
 ```
 
 </Tab>
 
 <Tab value="Windows">
 
-Use `python` if it points to version 3.12, otherwise specify `py -3.12`:
+Use `python` if it points to version 3.13, otherwise specify `py -3.13`:
 
 ```bash
 python -m venv .venv
@@ -118,7 +118,7 @@ py -m venv .venv
 **UV Users**
 
 ```bash
-uv venv --python 3.12 .venv
+uv venv --python 3.13 .venv
 ```
 
 ### Activate the Virtual Environment
