@@ -31,6 +31,8 @@ export const errorPosts = defineCollections({
   dir: "content/errors",
   schema: frontmatterSchema.extend({
     author: z.string(),
+    date: z.date(),
+    thumbnail: z.string()
   }),
 })
 

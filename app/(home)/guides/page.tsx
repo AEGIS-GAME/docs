@@ -14,14 +14,14 @@ export default function GuidesPage() {
       </div>
 
 
-      <div className="max-w-xl w-full">
+      <section className="max-w-xl w-full">
         <div className="flex flex-col gap-6">
           {posts.map((post) => {
             return (
               <Link
                 key={post.url}
                 href={post.url}
-                className="flex items-start justify-between transition-colors hover:bg-fd-muted/30 p-2 rounded-xl"
+                className="flex items-start justify-between transition-colors hover:bg-fd-muted/30 rounded-xl"
               >
                 <div>
                   <p className="mb-2 text-fd-muted-foreground">
@@ -42,13 +42,13 @@ export default function GuidesPage() {
                   height={150}
                   src={post.data.thumbnail}
                   alt="thumbnail"
-                  className="rounded-2xl"
+                  className="rounded-2xl ml-4 aspect-square object-cover"
                 />
               </Link>
             )
           })}
         </div>
-      </div>
+      </section>
     </main>
   )
 }
