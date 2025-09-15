@@ -21,6 +21,8 @@ export const guidePosts = defineCollections({
   dir: "content/guides",
   schema: frontmatterSchema.extend({
     author: z.string(),
+    date: z.date(),
+    thumbnail: z.string()
   }),
 })
 
