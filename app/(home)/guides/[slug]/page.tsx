@@ -2,7 +2,6 @@ import { notFound } from "next/navigation"
 import { getMDXComponents } from "@/mdx-components"
 import { guides, source } from "@/lib/source"
 import { createRelativeLink } from "fumadocs-ui/mdx"
-import { InlineTOC } from "@/components/inline-toc"
 
 
 export default async function Page(props: { params: Promise<{ slug: string }> }) {
