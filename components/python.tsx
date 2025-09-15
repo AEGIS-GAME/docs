@@ -78,16 +78,16 @@ export function PyFunction({ docString }: { docString: string }) {
 
           {doc.arguments.length > 0 && (
             <section className="mb-6">
-              <h4 className="font-mono font-semibold text-fd-foreground mb-2">
-                Arguments
+              <h4 className="font-semibold text-lg text-fd-foreground mb-2">
+                Parameters
               </h4>
               <div className="space-y-2">
                 {doc.arguments.map((arg, i) => {
                   const [name, description] = arg.split(":").map((s) => s.trim())
                   return (
-                    <div key={i} className="flex items-start gap-2">
-                      <span className="font-mono">{name}:</span>
-                      <span className="">{description}</span>
+                    <div key={i} className="flex flex-col">
+                      <span className="font-mono font-bold">{name}:</span>
+                      <span className="ml-4">{description}</span>
                     </div>
                   )
                 })}
@@ -97,8 +97,8 @@ export function PyFunction({ docString }: { docString: string }) {
 
           {doc.returns && (
             <section className="mb-6">
-              <h4 className="font-mono font-semibold text-fd-foreground mb-2">
-                Returns
+              <h4 className="font-semibold text-lg text-fd-foreground mb-2">
+                Return Value
               </h4>
               <p className="whitespace-pre-line">{doc.returns}</p>
             </section>
