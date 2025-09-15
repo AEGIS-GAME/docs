@@ -6,6 +6,7 @@ import { ImageZoom } from "fumadocs-ui/components/image-zoom"
 import type { MDXComponents } from "mdx/types"
 import { Callout } from "./components/callout"
 import { cn } from "./lib/cn"
+import { ExternalLink } from "lucide-react"
 
 // use this function to get MDX components, you will need it for rendering MDX
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
@@ -92,14 +93,17 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     li: ({ className, ...props }) => (
       <li className={cn("mt-2", className)} {...props} />
     ),
-    a: ({ className, ...props }) => (
+    a: ({ className, children, ...props }) => (
       <a
         className={cn(
-          "text-cyan-400 font-medium cursor-pointer hover:text-cyan-600 no-underline",
+          "inline-flex items-center gap-1 font-medium cursor-pointer text-gray-400 decoration-fd-muted-foreground",
           className
         )}
         {...props}
-      />
+      >
+        {children}
+        <ExternalLink className="w-4 h-4" />
+      </a>
     ),
     blockquote: ({ children, ...props }) => (
       <blockquote
