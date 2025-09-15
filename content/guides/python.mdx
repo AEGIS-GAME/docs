@@ -2,13 +2,13 @@
 title: Python Setup
 description: How to install python
 author: Dante
+date: 2025-09-14
+thumbnail: https://images.unsplash.com/photo-1624953587687-daf255b6b80a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-## Overview
+This guide shows you how to install Python 3.13 on [Mac](#mac), [Windows](#windows), and/or [Linux](#linux).
 
-This section shows you how to install Python 3.13 on Mac, Windows, and Linux.
-
-You can use the navigation chart above to jump your OS.
+Click a platform above to jump to its section.
 
 ## Mac
 
@@ -127,7 +127,7 @@ Choose the installer that matches your system type:
 2. Check the box that says "Add Python to PATH" at the bottom.
 3. Click Install Now.
 
-<Callout type="warning">
+<Callout title="Windows PATH" type="warning">
 
 If you forget to check the PATH box, Python won't work in the terminal until you fix your environment variables.
 
@@ -243,7 +243,7 @@ make -j$(nproc)
 sudo make altinstall
 ```
 
-<Callout type="warning">
+<Callout title="Install Command" type="warning">
 
 Don't use `make install` -- `make altinstall` avoids overwriting the system’s default `python3`.
 
