@@ -1,0 +1,42 @@
+---
+title: get_cell_info_at
+description: Return the cell info at a given location
+---
+
+```py
+def get_cell_info_at(loc: Location) -> CellInfo
+```
+
+## Description
+
+If the location is adjacent (1 tile away) to the agent or has been scanned by a drone,
+all layers and agents at that location are visible. Otherwise, only the top layer is
+visible and agent presence is hidden.
+
+If `HIDDEN_MOVE_COSTS` feature is enabled, unvisited cells have `move_cost = 1`.
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "loc",
+      description: "The location to query."
+    }
+  ]} 
+/>
+
+## Returns
+
+A CellInfo object following visibility rules.
+
+## Example
+
+```py
+loc = get_location()
+adj_loc = current_loc.add(Direction.NORTH)
+
+cell_info = get_cell_info_at(adj_loc)
+
+log(f"Cell Info: {cell_info}")
+```

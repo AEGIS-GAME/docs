@@ -1,0 +1,48 @@
+---
+title: predict 
+description: Submit a prediction 
+---
+
+```py
+def predict(surv_id: int, label: np.int32) -> None
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "surv_id",
+      description: "The unique ID of the survivor."
+    },
+    {
+      name: "label",
+      description: "The predicted symbol label/classification."
+    },
+  ]} 
+/>
+
+## Raises
+
+<DocEntry 
+  entries={[
+    {
+      name: "AgentError",
+      description: "If predictions are not enabled."
+    },
+  ]} 
+/>
+
+## Example
+
+```py
+prediction_info = read_pending_predictions()
+if prediction_info:
+  surv_id, image, _ = prediction_info[0]
+
+  # Run image through model
+
+  predicted_label = np.int32(np.argmax(model(image)))
+
+  predict(surv_id, predicted_label)
+```

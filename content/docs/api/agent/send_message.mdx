@@ -1,0 +1,41 @@
+---
+title: send_message 
+description: Send a message to team members, excluding self
+---
+
+```py
+def send_message(message: str, dest_ids: list[int]) -> None
+```
+
+## Description
+
+If `dest_ids` is empty, the message is broadcast to all team members
+except the sender.
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "message",
+      description: "The content of the message to send."
+    },
+    {
+      name: "dest_ids",
+      description: "A list of agent IDs to send the message to."
+    },
+  ]} 
+/>
+
+## Examples
+
+```py
+# Send a message to specific agents
+message = "Agent 42, report in!"
+dest_ids = [42]
+send_message(message, dest_ids)
+
+# Broadcast a message to all team members
+message = f"Survivored saved at {<loc>}."
+send_message(message, [])
+```

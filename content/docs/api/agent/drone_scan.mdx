@@ -1,0 +1,38 @@
+---
+title: drone_scan
+description: Scan a location using a drone
+---
+
+```py
+def drone_scan(loc: Location) -> None
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "loc",
+      description: "The location to scan."
+    }
+  ]} 
+/>
+
+## Raises
+
+<DocEntry 
+  entries={[
+    {
+      name: "AgentError",
+      description: "If drone scan is not enabled or location is invalid."
+    }
+  ]} 
+/>
+
+## Example:
+
+```py
+surv = get_survs()[0]
+
+drone_scan(surv)
+```

@@ -1,0 +1,34 @@
+---
+title: on_map 
+description:  Check whether a location is within the world bounds 
+---
+
+```py
+def on_map(loc: Location) -> bool
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "loc",
+      description: "The location to check."
+    }
+  ]} 
+/>
+
+## Returns
+
+A boolean indicating whether the given location is on the map.
+
+## Example
+
+```py
+next_loc = get_location().add(Direction.NORTH)
+
+if not on_map(next_loc):
+  # Handle invalid location (avoid movement, skip, etc.)
+else:
+  # Safe to proceed with the valid location 
+```

@@ -1,0 +1,42 @@
+---
+title: move 
+description: Move the agent in the specified direction
+---
+
+```py
+def move(direction: Direction) -> None
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "direction",
+      description: "The direction in which the agent should move."
+    }
+  ]} 
+/>
+
+## Raises
+
+<DocEntry 
+  entries={[
+    {
+      name: "AgentError",
+      description: "If the move is invalid (out of bounds)."
+    }
+  ]} 
+/>
+
+## Examples
+
+```py
+move(Direction.NORTH)
+```
+
+```py
+goal = Location(0, 5)
+direction = get_location().direction_to(goal)
+move(direction)
+```
