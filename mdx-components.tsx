@@ -1,8 +1,8 @@
 import defaultMdxComponents from "fumadocs-ui/mdx"
 import * as TabsComponents from "fumadocs-ui/components/tabs"
 import * as TreeComponents from "./components/file-tree"
-// import * as PythonComponents from "./components/python.tsx.bak"
 import DocEntry from "./components/docEntry"
+import Attribute from "./components/attribute"
 import { ImageZoom } from "fumadocs-ui/components/image-zoom"
 import type { MDXComponents } from "mdx/types"
 import { Callout } from "./components/callout"
@@ -16,6 +16,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ...TabsComponents,
     ...defaultMdxComponents,
     ...components,
+    Attribute,
     Callout,
     DocEntry,
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
