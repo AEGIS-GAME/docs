@@ -10,7 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@orama/orama": "^3.1.11",
+    "@orama/orama": "^3.1.14",
     "@radix-ui/react-collapsible": "^1.1.11",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "@radix-ui/react-popover": "^1.1.14",
