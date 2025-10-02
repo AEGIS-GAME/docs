@@ -1,0 +1,32 @@
+---
+title: add
+description: Return a new location by moving this location in the specified direction
+---
+
+```py
+def add(direction: Direction) -> Location
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "direction",
+      description: "The direction to move."
+    }
+  ]} 
+/>
+
+## Returns
+
+A new location in the given direction.
+
+## Example
+
+```py
+current = get_location()
+next_loc = current.add(Direction.NORTH)
+
+log(f"Next location: {next_loc}")
+```

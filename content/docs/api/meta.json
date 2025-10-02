@@ -5,6 +5,13 @@
   "icon": "Terminal",
   "pages": [
     "agent",
-    "cellinfo"
+    "agenttype",
+    "cellinfo",
+    "direction",
+    "location",
+    "message",
+    "rubble",
+    "survivor",
+    "team"
   ]
 }

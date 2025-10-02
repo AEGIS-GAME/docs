@@ -1,0 +1,34 @@
+---
+title: direction_to
+description: Determine the cardinal direction from this location to another location
+---
+
+```py
+def direction_to(location: Location) -> Direction
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "location",
+      description: "The target location."
+    }
+  ]} 
+/>
+
+## Returns
+
+The cardinal direction pointing towards the target location.
+
+## Example
+
+```py
+my_loc = get_location()
+target = Location(4, 7)
+
+direction = my_loc.direction_to(target)
+
+log(f"Move {direction} to reach the target at {target}")
+```

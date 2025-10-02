@@ -3,14 +3,16 @@ import { cn } from "fumadocs-ui/utils/cn"
 import { highlight } from "fumadocs-core/highlight"
 
 interface Attr {
-  type: string
+  type?: string
   docstring: string
 }
 
 export default function Attribute({ type, docstring }: Attr) {
   return (
     <div>
-      <InlineCode lang="python" code={type} />
+      {type && (
+        <InlineCode lang="python" code={type} />
+      )}
       <p className="text-fd-muted-foreground">
         {docstring}
       </p>

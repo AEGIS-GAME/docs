@@ -1,0 +1,38 @@
+---
+title: distance_to
+description: Calculate the squared Euclidean distance from this location to another
+---
+
+<Callout type="error" title="Heuristic">
+  DO NOT use this for your A-Star heuristic.
+  This returns the squared Euclidean distance, which may overestimate the actual cost.
+</Callout>
+
+```py
+def distance_to(location: Location) -> int
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "location",
+      description: "The target location."
+    }
+  ]} 
+/>
+
+## Returns
+
+The squared distance between the two locations.
+
+## Example
+
+```py
+loc1 = Location(0, 4)
+loc2 = Location(1, 3)
+
+distance = loc1.distance_to(loc2)
+log(f"distance: {distance}")
+```

@@ -1,0 +1,30 @@
+---
+title: is_alive
+description: Check whether the survivor is alive
+---
+
+```py
+def is_alive() -> bool
+```
+
+## Description
+
+This check is only relevant when the `SURV_HEALTH_DECAY_RATE` configuration is greater than zero,
+meaning survivors can die over time.
+
+## Returns
+
+A boolean indicating whether the survivor is alive.
+
+## Example
+
+```py
+loc = get_location()
+top_layer = get_cell_info_at(loc).top_layer
+
+if isinstance(top_layer, Survivor):
+  if top_layer.is_alive():
+    # Do something with alive survivor
+  else:
+    # Do something with dead survivor
+```
