@@ -1,7 +1,8 @@
 import defaultMdxComponents from "fumadocs-ui/mdx"
 import * as TabsComponents from "fumadocs-ui/components/tabs"
 import * as TreeComponents from "./components/file-tree"
-import * as PythonComponents from "./components/python"
+import DocEntry from "./components/docEntry"
+import Attribute from "./components/attribute"
 import { ImageZoom } from "fumadocs-ui/components/image-zoom"
 import type { MDXComponents } from "mdx/types"
 import { Callout } from "./components/callout"
@@ -12,11 +13,12 @@ import { ExternalLink } from "lucide-react"
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...TreeComponents,
-    ...PythonComponents,
     ...TabsComponents,
     ...defaultMdxComponents,
     ...components,
+    Attribute,
     Callout,
+    DocEntry,
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
       <h3
         className={cn(

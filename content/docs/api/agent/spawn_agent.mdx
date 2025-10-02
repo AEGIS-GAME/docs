@@ -1,0 +1,46 @@
+---
+title: spawn_agent 
+description: Spawn an agent at a specified location with a given type
+---
+
+```py
+def spawn_agent(loc: Location, agent_type: AgentType) -> None
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "loc",
+      description: "A valid spawn location."
+    },
+    {
+      name: "agent_type",
+      description: "The type of agent to spawn."
+    },
+  ]} 
+/>
+
+## Raises
+
+<DocEntry 
+  entries={[
+    {
+      name: "AgentError",
+      description: "If spawn location is invalid or max amount reached."
+    },
+  ]} 
+/>
+
+## Example
+
+```py
+spawn = get_spawns()[0]
+
+try:
+  spawn_agent(spawn, AgentType.MEDIC)
+  log(f"Spawned {AgentType.MEDIC} at {spawn}")
+except AgentError as e:
+  log("Failed to spawn: {e}")
+```

@@ -1,0 +1,54 @@
+---
+title: read_messages 
+description: Retrieve messages from the agent's message buffer 
+---
+
+```py
+def read_messages(round_num: int = -1) -> list[Message]
+```
+
+## Description
+
+If no `round_num` is provided, messages are returned in reverse-chronological order --
+from the most recent round to the oldest -- up to the buffer size defined by
+`Constants.MESSAGE_HISTORY_LIMIT`.
+
+This buffer stores only the most recent `Constants.MESSAGE_HISTORY_LIMIT` rounds. Once full,
+older messages are overwritten by new ones.
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "round_num",
+      description: "If provided, only messages from the specified round are returned."
+    },
+  ]} 
+/>
+
+## Returns
+
+A list of messages.
+
+## Examples
+
+```py
+# Read recent messages (from newest to oldest)
+messages = read_messages()
+
+for msg in messages:
+  log(f"[Round {msg.round_num}] From Agent {msg.sender_id}: {msg.message}")
+```
+
+```py
+# Try to read messages from a specific round
+old_round = get_round_num() - 2
+old_messages = read_messages(old_round)
+
+if not old_messages:
+  log(f"No messages available from round {old_round} (possibly overwritten).")
+else:
+  for msg in old_messages:
+    log(f"[Round {old_round}] From Agent {msg.sender_id}: {msg.message}")
+```

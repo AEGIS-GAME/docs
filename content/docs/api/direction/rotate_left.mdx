@@ -1,0 +1,25 @@
+---
+title: rotate_left
+description: Rotate the direction 45 degrees counter-clockwise
+---
+
+```py
+def rotate_left() -> Direction
+```
+
+## Description
+
+`Direction.CENTER` returns itself.
+
+## Returns
+
+The direction rotated left.
+
+## Example
+
+```py
+direction = Direction.NORTH
+left_direction = direction.rotate_left() # Direction.NORTH_EAST
+
+log(f"{direction} rotated left is {left_direction}")
+```

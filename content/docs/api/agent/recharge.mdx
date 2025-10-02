@@ -1,0 +1,25 @@
+---
+title: recharge 
+description: Recharge the agent's energy if on a charging cell
+---
+
+```py
+def recharge() -> None
+```
+
+## Description
+
+Each call restores `Constants.NORMAL_CHARGE` energy, without exceeding
+`Constants.MAX_ENERGY_LEVEL`.
+
+If the agent is not on a charging cell, this function has no effect.
+
+## Example
+
+```py
+loc = get_location()
+charging_cells = get_charging_cells()
+
+if charging_cells and loc in charging_cells:
+  recharge()
+```

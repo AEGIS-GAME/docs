@@ -1,0 +1,48 @@
+---
+title: read_pending_predictions 
+description: Retrieve the list of pending predictions stored by the agent's team
+---
+
+```py
+def read_pending_predictions() -> list[tuple[int, NDArray[np.uint8], NDArray[np.int32]]]
+```
+
+## Description
+
+Each prediction is represented as a tuple containing:
+
+1. `surv_id`: The ID of the saved survivor that triggered this prediction.
+2. `image_to_predict`: The symbol image data for model input.
+3. `all_unique_labels`: The set of possible symbol labels.
+
+## Returns
+
+A list of pending symbol predictions. Returns an empty list if no pending
+predictions are available.
+
+## Raises
+
+<DocEntry 
+  entries={[
+    {
+      name: "AgentError",
+      description: "If predictions are not enabled."
+    },
+  ]} 
+/>
+
+## Example
+
+```py
+pending = read_pending_predictions()
+
+if not pending:
+  log("No pending predictions available.")
+else:
+  # Process the first pending prediction
+  surv_id, image, labels = pending[0]
+
+  log(f"Predicting symbol for survivor ID: {surv_id}")
+  log(f"Image to predict: {image}")
+  log(f"Possible labels: {labels}")
+```

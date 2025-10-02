@@ -1,0 +1,22 @@
+---
+title: is_killer_cell 
+description: Check if the cell is a killer cell
+---
+
+```py
+def is_killer_cell() -> bool
+```
+
+## Returns
+
+A boolean value indicating whether cell is a `KILLER_CELL`.
+
+## Example
+
+```py
+next_loc = get_location().add(Direction.NORTH)
+next_info = get_cell_info_at(next_loc)
+
+if next_info.is_killer_cell():
+  # Handle killer location
+```

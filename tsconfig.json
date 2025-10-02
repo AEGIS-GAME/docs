@@ -31,6 +31,6 @@
     ".next/types/**/*.ts",
     "next-env.d.ts",
     "build/types/**/*.ts"
-  ],
+, "components/python.tsx"  ],
   "exclude": ["node_modules"]
 }

@@ -1,0 +1,34 @@
+---
+title: save 
+description: Save a survivor located at the agent's current location 
+---
+
+```py
+def save() -> None
+```
+
+## Description
+
+If called when no survivor is present at the agent’s current location, this function
+has no effect but will still increase the agent’s action cooldown.
+
+## Raises
+
+<DocEntry 
+  entries={[
+    {
+      name: "AgentError",
+      description: "If saving is invalid according to game rules."
+    }
+  ]} 
+/>
+
+## Example
+
+```py
+loc = get_location()
+top_layer = get_cell_info_at(loc).top_layer
+
+if isinstance(top_layer, Survivor):
+  save()
+```

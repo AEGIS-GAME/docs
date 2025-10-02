@@ -2,5 +2,16 @@
   "root": true,
   "title": "API Reference",
   "description": "The Aegis API",
-  "icon": "Terminal"
+  "icon": "Terminal",
+  "pages": [
+    "agent",
+    "agenttype",
+    "cellinfo",
+    "direction",
+    "location",
+    "message",
+    "rubble",
+    "survivor",
+    "team"
+  ]
 }

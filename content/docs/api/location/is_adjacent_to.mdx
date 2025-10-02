@@ -1,0 +1,43 @@
+---
+title: is_adjacent_to
+description: Check if this location is adjacent to another location
+---
+
+```py
+def is_adjacent_to(location: Location) -> bool
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "location",
+      description: "The target location."
+    }
+  ]} 
+/>
+
+## Returns
+
+A boolean indicating whether the given location adjacent.
+
+## Examples
+
+```py
+# Is adjacent
+loc1 = Location(0, 4)
+loc2 = Location(1, 3)
+
+is_adjacent = loc1.is_adjacent_to(loc2)
+log(f"is adjacent? {is_adjacent}") # True
+```
+
+```py
+# Not adjacent
+loc1 = Location(0, 4)
+loc2 = Location(5, 2)
+
+is_adjacent = loc1.is_adjacent_to(loc2)
+log(f"is adjacent? {is_adjacent}") # False
+```

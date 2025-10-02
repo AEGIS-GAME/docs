@@ -1,0 +1,45 @@
+---
+title: log 
+description: Log a message
+---
+
+```py
+def log(*args: object = ()) -> None
+```
+
+## Description
+
+Use this function to log debug messages or values. The built-in `print`
+function is disabled. 
+
+Messages are prefixed automatically with agent metadata:
+
+```bash
+[Agent#(<id>:<team>)@<round>]: <log output>
+```
+
+## Parameters
+
+<DocEntry 
+  entries={[
+    {
+      name: "*args",
+      description: "One or more items to log."
+    }
+  ]} 
+/>
+
+## Examples
+
+```py
+# Log a simple message
+log("Hello world")
+
+# Log multiple values
+energy = get_energy_level()
+log("Location: ", energy)
+
+# Use f-string
+loc = get_location()
+log(f"My location: {log}")
+```

@@ -1,0 +1,25 @@
+---
+title: get_opposite
+description: Get the opposite direction
+---
+
+```py
+def get_opposite() -> Direction
+```
+
+## Description
+
+`Direction.CENTER` returns itself.
+
+## Returns
+
+The opposite direction.
+
+## Example
+
+```py
+direction = Direction.NORTH
+opp_direction = direction.get_opposite() # Direction.SOUTH
+
+log(f"{direction} opposite is {opp_direction}")
+```

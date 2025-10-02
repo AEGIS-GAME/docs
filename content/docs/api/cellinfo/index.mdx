@@ -1,0 +1,35 @@
+---
+title: CellInfo
+description: Represents information about a cell in the world.
+---
+
+## Description
+
+`CellInfo` objects are not directly comparable. If you need to compare two cells,
+compare their corresponding `Location` objects instead.
+
+## Attributes
+
+### type
+
+<Attribute type="CellType" docstring="The type of the cell." />
+
+### location
+
+<Attribute type="Location" docstring="The location of the cell." />
+
+### move_cost
+
+<Attribute type="int" docstring="The movement cost to traverse this cell." />
+
+### agents
+
+<Attribute type="list[int]" docstring="List of agent IDs current in this cell." />
+
+### layers
+
+<Attribute type="list[WorldObject]" docstring="Stack of world objects present in the cell." />
+
+### top_layer
+
+<Attribute type="WorldObject | None" docstring="Get the top-most layer of the cell." />
